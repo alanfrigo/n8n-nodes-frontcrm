@@ -9,12 +9,12 @@
 		"frontcrm"
 	],
 	"author": {
-		"name": "FrontCRM",
-		"email": "contato@frontcrm.com.br"
+		"name": "Alan Frigo",
+		"email": "alanfrigo@outlook.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/frontcrm/n8n-nodes-frontcrm.git"
+		"url": "https://github.com/alanfrigo/n8n-nodes-frontcrm.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
