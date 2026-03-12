@@ -24,7 +24,7 @@ export class FrontCrm implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'FrontCRM',
 		name: 'frontCrm',
-		icon: { light: 'file:../../icons/frontcrm.png', dark: 'file:../../icons/frontcrm.png' },
+		icon: { light: 'file:../../icons/frontcrm.svg', dark: 'file:../../icons/frontcrm.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
