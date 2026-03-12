@@ -9,7 +9,7 @@ import type {
 export class FrontCrmApi implements ICredentialType {
 	name = 'frontCrmApi';
 	displayName = 'FrontCRM API';
-	icon: Icon = { light: 'file:../icons/frontcrm.svg', dark: 'file:../icons/frontcrm.svg' };
+	icon: Icon = { light: 'file:../icons/frontcrm.svg', dark: 'file:../icons/frontcrm.dark.svg' };
 	documentationUrl = 'https://flwchat.readme.io/reference';
 	properties: INodeProperties[] = [
 		{
