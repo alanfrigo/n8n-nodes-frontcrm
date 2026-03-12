@@ -35,9 +35,11 @@ export const cardUpdateDescription: INodeProperties[] = [
 				routing: { send: { type: 'body', property: 'stepId' } },
 			},
 			{
-				displayName: 'Responsible User ID',
+				displayName: 'Responsible User Name or ID',
 				name: 'responsibleUserId',
-				type: 'string',
+				type: 'options',
+				description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				typeOptions: { loadOptionsMethod: 'getUsers' },
 				default: '',
 				routing: { send: { type: 'body', property: 'responsibleUserId' } },
 			},

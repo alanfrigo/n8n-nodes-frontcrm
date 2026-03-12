@@ -2,13 +2,14 @@ import type { INodeProperties } from 'n8n-workflow';
 
 export const portfolioBatchRemoveContactsDescription: INodeProperties[] = [
 	{
-		displayName: 'Portfolio ID',
+		displayName: 'Portfolio Name or ID',
 		name: 'portfolioId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getPortfolios' },
 		required: true,
 		default: '',
 		displayOptions: { show: { operation: ['batchRemoveContacts'], resource: ['portfolio'] } },
-		description: 'ID of the portfolio',
+		description: 'ID of the portfolio. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Filter Body (JSON)',

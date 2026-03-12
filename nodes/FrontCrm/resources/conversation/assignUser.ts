@@ -11,13 +11,14 @@ export const conversationAssignUserDescription: INodeProperties[] = [
 		description: 'ID of the conversation to assign a user to',
 	},
 	{
-		displayName: 'User ID',
+		displayName: 'User Name or ID',
 		name: 'userId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getUsers' },
 		required: true,
 		default: '',
 		displayOptions: { show: { operation: ['assignUser'], resource: ['conversation'] } },
-		description: 'ID of the user to assign',
+		description: 'ID of the user to assign. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 		routing: { send: { type: 'body', property: 'userId' } },
 	},
 ];

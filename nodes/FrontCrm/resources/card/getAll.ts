@@ -4,13 +4,14 @@ const showFor = { operation: ['getAll'], resource: ['card'] };
 
 export const cardGetAllDescription: INodeProperties[] = [
 	{
-		displayName: 'Panel ID',
+		displayName: 'Panel Name or ID',
 		name: 'panelId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getPanels' },
 		required: true,
 		default: '',
 		displayOptions: { show: showFor },
-		description: 'ID of the panel/pipeline to list cards from',
+		description: 'ID of the panel/pipeline to list cards from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 		routing: { send: { type: 'query', property: 'PanelId' } },
 	},
 	{
@@ -67,9 +68,11 @@ export const cardGetAllDescription: INodeProperties[] = [
 				routing: { send: { type: 'query', property: 'IncludeArchived' } },
 			},
 			{
-				displayName: 'Responsible User ID',
+				displayName: 'Responsible User Name or ID',
 				name: 'responsibleUserId',
-				type: 'string',
+				type: 'options',
+				description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				typeOptions: { loadOptionsMethod: 'getUsers' },
 				default: '',
 				routing: { send: { type: 'query', property: 'ResponsibleUserId' } },
 			},

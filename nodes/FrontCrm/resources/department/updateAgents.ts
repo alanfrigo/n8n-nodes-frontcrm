@@ -4,13 +4,14 @@ const showFor = { operation: ['updateAgents'], resource: ['department'] };
 
 export const departmentUpdateAgentsDescription: INodeProperties[] = [
 	{
-		displayName: 'Department ID',
+		displayName: 'Department Name or ID',
 		name: 'departmentId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getDepartments' },
 		required: true,
 		default: '',
 		displayOptions: { show: showFor },
-		description: 'ID of the department',
+		description: 'ID of the department. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Agents',

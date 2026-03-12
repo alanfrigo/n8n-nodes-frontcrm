@@ -4,13 +4,14 @@ const showFor = { operation: ['sendAsync'], resource: ['message'] };
 
 export const messageSendAsyncDescription: INodeProperties[] = [
 	{
-		displayName: 'Channel ID',
+		displayName: 'Channel Name or ID',
 		name: 'channelId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getChannels' },
 		required: true,
 		default: '',
 		displayOptions: { show: showFor },
-		description: 'Channel ID to send from',
+		description: 'Channel ID to send from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 		routing: { send: { type: 'body', property: 'channelId' } },
 	},
 	{

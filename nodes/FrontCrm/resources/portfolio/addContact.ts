@@ -4,13 +4,14 @@ const showFor = { operation: ['addContact'], resource: ['portfolio'] };
 
 export const portfolioAddContactDescription: INodeProperties[] = [
 	{
-		displayName: 'Portfolio ID',
+		displayName: 'Portfolio Name or ID',
 		name: 'portfolioId',
-		type: 'string',
+		type: 'options',
+		typeOptions: { loadOptionsMethod: 'getPortfolios' },
 		required: true,
 		default: '',
 		displayOptions: { show: showFor },
-		description: 'ID of the portfolio',
+		description: 'ID of the portfolio. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Contact ID',
